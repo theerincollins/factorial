@@ -9,3 +9,16 @@ var factorial = function(inputNumber) {
     return resultFactorial;
   }
 };
+
+
+$(document).ready(function() {
+  $("form#inputForm").submit(function(event) {
+    var inputNumber = parseInt($("input#inputNumber").val());
+    var result = factorial(inputNumber);
+
+    $(".inputNumber").text(inputNumber);
+    $(".resultNumber").text(result);
+    $("#results").show();
+    event.preventDefault();
+  });
+});
